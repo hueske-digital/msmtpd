@@ -1,0 +1,20 @@
+services:
+  app:
+    image: crazymax/msmtpd:latest
+    restart: unless-stopped
+    environment:
+      - TZ=Europe/Berlin
+      - SMTP_HOST=mail.agenturserver.de
+      - SMTP_TLS=on
+      - SMTP_STARTTLS=on
+      - SMTP_TLS_CHECKCERT=on
+      - SMTP_AUTH=on
+      - SMTP_USER
+      - SMTP_PASSWORD
+      - SMTP_FROM
+    networks:
+      proxy_mails:
+
+networks:
+  proxy_mails:
+    name: proxy_mails
