@@ -12,6 +12,7 @@ services:
       - SMTP_USER
       - SMTP_PASSWORD
       - SMTP_FROM
+      - SMTP_PORT=587
     networks:
       proxy_mails:
 
